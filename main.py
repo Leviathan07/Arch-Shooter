@@ -4,7 +4,7 @@ from scripts.utility import gen_background
 
 py.init()
 
-SCREEN_WIDTH, SCREEN_HEIGHT = 1400, 850
+SCREEN_WIDTH, SCREEN_HEIGHT = 1400, 900
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 player_img = py.image.load("./arch-linux-normal-56.png").convert()
