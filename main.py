@@ -1,6 +1,6 @@
 import sys
 import pygame as py
-from scripts.utility import gen_background
+from scripts.utility import gen_background, spawn_enemy
 
 py.init()
 
@@ -16,6 +16,8 @@ can_shoot = True
 dt = 0
 clock = py.time.Clock()
 
+enemy_timer = py.event.custom_type()
+py.time.set_timer(enemy_timer, 700)
 while True:
     screen.fill('black')
     for i in stars:
@@ -70,6 +72,8 @@ while True:
         if event.type == py.QUIT:
             py.quit()
             sys.exit()
+        if event.type == enemy_timer:
+            spawn_enemy(SCREEN_WIDTH, SCREEN_HEIGHT)
     dt = clock.tick(60) / 1000
     py.display.flip()
 
