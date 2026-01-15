@@ -3,8 +3,6 @@ import pygame as py
 from scripts.utility import gen_background, spawn_enemy
 
 
-# hello world
-
 py.init()
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 1400, 900
