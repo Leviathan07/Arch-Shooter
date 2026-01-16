@@ -8,7 +8,7 @@ py.init()
 SCREEN_WIDTH, SCREEN_HEIGHT = 1400, 900
 screen = py.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-player_img = py.image.load("./arch-linux-normal-56.png").convert()
+player_img = py.image.load("./player.png").convert()
 player_rect = player_img.get_frect(center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
 stars = gen_background(500, SCREEN_WIDTH, SCREEN_HEIGHT)
 laser = py.FRect((0, -50), (50, 25)) 
@@ -80,6 +80,7 @@ while True:
 
 '''
 Resources
-pygame-ce: https://pyga.me/docs/
-Player image https://github.com/joaofranciscoguarda/arch-pixel-icons?tab=readme-ov-file
+pygame-ce:    https://pyga.me/docs/
+Player image: https://github.com/joaofranciscoguarda/arch-pixel-icons?tab=readme-ov-file
+Enemy images: https://icons8.com/icons/set/pixel-windows--style-color
 '''
