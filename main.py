@@ -69,8 +69,10 @@ can_shoot = True
 dt = 0
 clock = py.time.Clock()
 
-enemy_timer = py.event.custom_type()
-py.time.set_timer(enemy_timer, 700)
+score = 0
+
+timer = py.event.custom_type()
+py.time.set_timer(timer, 700)
 while True:
     dt = clock.tick() / 1000
     screen.fill('black')
@@ -83,9 +85,9 @@ while True:
             py.quit()
             sys.exit()
 
-        if event.type == enemy_timer:
+        if event.type == timer:
             #spawn_enemy(SCREEN_WIDTH, SCREEN_HEIGHT, 1, screen)
-            pass
+            score += 1
 
     all_sprites.draw(screen)
     py.display.update()
