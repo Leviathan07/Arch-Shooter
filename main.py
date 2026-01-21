@@ -3,9 +3,6 @@ import pygame as py
 from scripts.utility import gen_background
 from scripts.sprites import Player
 
-
-
-
 py.init()
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 1400, 900
@@ -18,28 +15,32 @@ stars = gen_background(500, SCREEN_WIDTH, SCREEN_HEIGHT)
 can_shoot = True
 dt = 0
 clock = py.time.Clock()
-
 score = 0
 
+font = py.font.SysFont('sans-serf', 32)
+
 timer = py.event.custom_type()
-py.time.set_timer(timer, 700)
+py.time.set_timer(timer, 1000)
 while True:
-    dt = clock.tick() / 1000
     screen.fill('black')
     for i in stars:
         py.draw.circle(screen, "white", i, 1)
 
     all_sprites.update(dt)
+
+    all_sprites.draw(screen)
+
+    text = font.render(f"Score: {score}", True, 'white')
+    screen.blit(text, (20, 20))
+
     for event in py.event.get():
         if event.type == py.QUIT:
             py.quit()
             sys.exit()
-
         if event.type == timer:
-            #spawn_enemy(SCREEN_WIDTH, SCREEN_HEIGHT, 1, screen)
             score += 1
+    dt = clock.tick() / 1000
 
-    all_sprites.draw(screen)
     py.display.update()
 
 '''

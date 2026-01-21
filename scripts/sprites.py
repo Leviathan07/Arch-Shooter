@@ -1,9 +1,10 @@
 import pygame as py
+from scripts.utility import load_img
 
 class Player(py.sprite.Sprite):
     def __init__(self, groups):
         super().__init__(groups)
-        self.image = py.image.load("./images/player.png").convert()
+        self.image = load_img('player')
         self.width, self.height = py.display.get_window_size()
         self.rect = self.image.get_frect(center = (self.width // 2, self.height // 2))
         self.laser_rect = py.FRect((0, -40), (20, 25))
@@ -43,7 +44,7 @@ class Player(py.sprite.Sprite):
 class Laser(py.sprite.Sprite):
     def __init__(self, pos, groups):
         super().__init__(groups)
-        self.image = py.image.load("./images/laser.png").convert()
+        self.image = load_img('laser')
         self.rect = self.image.get_frect(midbottom = pos)
 
     def update(self, dt):

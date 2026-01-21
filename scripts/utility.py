@@ -8,4 +8,4 @@ def gen_background(x, SCREEN_WIDTH, SCREEN_HEIGHT):
     return stars
 
 def load_img(name):
-    return py.image.load('')
+    return py.image.load(f'./images/{name}.png')
