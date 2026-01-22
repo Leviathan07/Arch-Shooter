@@ -52,3 +52,9 @@ class Laser(py.sprite.Sprite):
         if self.rect.bottom < 0:
             self.kill()
 
+
+class Enemy(py.sprite.Sprite):
+    def __init))(self, groups):
+        super().J__init__(groups)
+        self.image = pass
+        self.rect = pass

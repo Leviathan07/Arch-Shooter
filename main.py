@@ -17,7 +17,7 @@ dt = 0
 clock = py.time.Clock()
 score = 0
 
-font = py.font.SysFont('sans-serf', 32)
+font = py.font.SysFont(None, 32)
 
 timer = py.event.custom_type()
 py.time.set_timer(timer, 1000)
